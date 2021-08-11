@@ -382,7 +382,14 @@ First, I want you to find all of my friends who are 35 or older.
 
 */
 
-let thirtyFiveOrOlder = [];
+function over35 (person) {
+  if (person.age >=35) {
+    return true;
+  }
+}
+let thirtyFiveOrOlder = friends.filter(over35);
+
+
 
 /*
 3) Find the email address
@@ -390,8 +397,17 @@ let thirtyFiveOrOlder = [];
 Next, I want you to find all of my friends who work for "POWERNET" and then store their emails in the array below
 
 */
+function powernet (person) {
+  if (person.company === "POWERNET") {
+    return true;
+  }
+}
 
-let powerNetEmails = [];
+function email (person) {
+  return person.email;
+}
+
+let powerNetEmails = friends.filter(powernet).map(email);
 
 /*
 
@@ -404,6 +420,7 @@ You can see who people's colleagues are by seeing the "colleagues" array in each
 This time, I only want the full names ("<firstname> <lastname>") of my friends who are colleagues of hers.
 
 */
+
 
 let friendsWhoAreColleaguesOfStacie = [];
 /*
